@@ -1,4 +1,4 @@
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/00ac9a3f-7894-4e9b-a7b0-0e93a3715849/deploy-status)](https://app.netlify.com/sites/workers-loading-styling/deploys)
 
 ### Loading Styling
 

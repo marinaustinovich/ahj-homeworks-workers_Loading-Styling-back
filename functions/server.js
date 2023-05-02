@@ -30,6 +30,10 @@ router.get('/', async (ctx) => {
   ctx.body = 'Welcome to server!';
 });
 
+router.get('/news', async (ctx) => {
+  ctx.body = generateNews();
+});
+
 app.use(router.routes()).use(router.allowedMethods());
 
 const handler = serverless(app);

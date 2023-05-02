@@ -4,6 +4,7 @@
   "description": "the second task about WebWorkers and ServiceWorkers (Loading Styles)",
   "main": "server.js",
   "scripts": {
+    "prestart": "npm install",
     "start": "nodemon server.js"
   },
   "keywords": [
