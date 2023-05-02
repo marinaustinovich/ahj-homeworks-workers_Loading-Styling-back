@@ -10,23 +10,6 @@ const app = new Koa();
 
 app.use(cors());
 
-function generateData() {
-  const data = [];
-  const randomLength = faker.datatype.number({ min: 1, max: 10 });
-
-  for (let i = 0; i < randomLength; i++) {
-    data.push({
-      author_id: faker.datatype.uuid(),
-      title: faker.lorem.sentence(),
-      author: faker.name.findName(),
-      avatar: faker.image.avatar(),
-      image: faker.image.imageUrl(),
-      created: faker.date.recent().getTime(),
-    });
-  }
-  return data;
-}
-
 function generateNews() {
   const data = [];
   const randomLength = faker.datatype.number({ min: 1, max: 3 });
