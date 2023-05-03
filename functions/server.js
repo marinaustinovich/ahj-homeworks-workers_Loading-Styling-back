@@ -11,7 +11,7 @@ const app = new Koa();
 
 app.use(cors());
 app.use(slow({
-  delay: 2000, // Задержка в миллисекундах
+  delay: 5000, // Задержка в миллисекундах
   urlPattern: '/news', // Опционально: только к определенному URL-шаблону
 }));
 function generateNews() {
