@@ -1,5 +1,6 @@
 const faker = require('faker');
 const cors = require('@koa/cors');
+const slow = require('koa-slow');
 const serverless = require('serverless-http');
 const Koa = require('koa');
 const Router = require('koa-router');
@@ -9,7 +10,10 @@ const router = new Router();
 const app = new Koa();
 
 app.use(cors());
-
+app.use(slow({
+  delay: 2000, // Задержка в миллисекундах
+  urlPattern: '/news', // Опционально: только к определенному URL-шаблону
+}));
 function generateNews() {
   const data = [];
   const randomLength = faker.datatype.number({ min: 1, max: 5 });
