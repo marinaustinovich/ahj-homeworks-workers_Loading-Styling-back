@@ -12,7 +12,7 @@ app.use(cors());
 
 function generateNews() {
   const data = [];
-  const randomLength = faker.datatype.number({ min: 1, max: 3 });
+  const randomLength = faker.datatype.number({ min: 1, max: 5 });
   for (let i = 0; i < randomLength; i++) {
     data.push({
       id: faker.datatype.uuid(),
@@ -38,3 +38,8 @@ app.use(router.routes()).use(router.allowedMethods());
 
 const handler = serverless(app);
 module.exports.handler = handler;
+
+// для заупска сервера локально
+// app.listen(7000, function(){
+//   console.log('Server running on http://localhost:7000')
+// });
