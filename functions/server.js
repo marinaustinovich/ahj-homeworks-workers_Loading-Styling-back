@@ -11,8 +11,8 @@ const app = new Koa();
 
 app.use(cors());
 app.use(slow({
-  delay: 5000, // Задержка в миллисекундах
-  urlPattern: '/news', // Опционально: только к определенному URL-шаблону
+  delay: 5000, 
+  urlPattern: '/news',
 }));
 function generateNews() {
   const data = [];
@@ -28,7 +28,7 @@ function generateNews() {
   return data;
 }
 
-app.use(serve(path.join(__dirname, 'public'))); // предоставлять статические файлы из папки 'public'
+app.use(serve(path.join(__dirname, 'public'))); 
 
 router.get('/', async (ctx) => {
   ctx.body = 'Welcome to server!';
@@ -42,8 +42,3 @@ app.use(router.routes()).use(router.allowedMethods());
 
 const handler = serverless(app);
 module.exports.handler = handler;
-
-// для заупска сервера локально
-// app.listen(7000, function(){
-//   console.log('Server running on http://localhost:7000')
-// });
